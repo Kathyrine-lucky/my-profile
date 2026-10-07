@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阮琳惠的个人主页</title>
+    <!-- 引入开源字体，无需联网也能正常显示 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e8f0fe;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+        h2 {
+            font-size: 22px;
+            color: #2563eb;
+            margin-bottom: 20px;
+            border-left: 4px solid #2563eb;
+            padding-left: 12px;
+        }
+        .info-list {
+            list-style: none;
+        }
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .link-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .link-btn:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            margin-top: 50px;
+        }
+        /* 响应式适配手机 */
+        @media (max-width: 768px) {
+            .card {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部自我介绍区域 -->
+        <div class="card header">
+            <!-- 替换成你自己的头像图片路径，也可以用在线图片链接 -->
+            <img class="avatar" src="C:\Users\lenovo\Desktop\熊二.jpg" alt="头像">
+            <!-- 替换成你的名字 -->
+            <h1>阮琳惠</h1>
+            <!-- 替换成你的个人简介，比如学生身份、职业等 -->
+            <p class="subtitle">中山大学BMEer | 积极探索中</p>
+        </div>
+
+        <!-- 个人基础信息区域 -->
+        <div class="card">
+            <h2>关于我</h2>
+            <ul class="info-list">
+                <!-- 下面所有内容都可以随便替换成你自己的信息 -->
+		<li>✨爱好：做手工（做过纸火箭、钩织工艺品、拼搭房屋模型等）、绘画、打乒乓球、初学吉他、跑步、品尝美食
+                <li>📍 所在地：广东省广州市海珠区</li>
+                <li>🎓 身份：中山大学大一生物医学工程本科生</li>
+		<li>📚 个人邮箱：ruanlh3@mail2.sysu.edu.cn</li>
+                <li>📚 近期目标：C语言编程入门、逐步了解本专业</li>
+                <li>✨ 个人简介：本人热情开朗、积极进取、乐于钻研学习，对什么都好奇，想试试，执行力强</li>
+            </ul>
+        </div>
+
+        <!-- 跳转链接区域 -->
+        <div class="card">
+            <h2>我的主页链接</h2>
+            <div class="links">
+                <!-- 在这里添加你自己的各类平台链接，比如GitHub、社交账号、作品集等 -->
+                <a href="https://github.com" target="_blank" class="link-btn">我的GitHub</a>
+               <a href="javascript:;" class="link-btn" onclick="copyWechat()">我的微信</a>
+                           </div>
+        </div>
+<!-- 把这段放在</head>标签之前，也就是最顶部的style代码块后面 -->
+<script>
+function copyWechat() {
+    // 这里替换成你自己的微信号
+    const wechatId = "xppwza666";
+    navigator.clipboard.writeText(wechatId).then(() => {
+        alert("微信号已复制：" + wechatId);
+    }).catch(err => {
+        const textarea = document.createElement('textarea');
+        textarea.value = wechatId;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert("微信号已复制：" + wechatId);
+    });
+}
+</script>
+        <div class="footer">
+            <p>© 2026 阮琳惠 个人主页</p>
+        </div>
+    </div>
+</body>
+</html>
